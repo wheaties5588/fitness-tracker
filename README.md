@@ -10,7 +10,7 @@ Matt Wieciech
 [wheaties5588](https://github.com/wheaties5588)
   
 ## Description
-App that allows the user to record workouts and track the stats. Add to an existing workout or create a new workout. Built with MongoDB, Mongoose and Express.
+App that allows the user to record workouts and track the stats. Add to an existing workout or create a new workout. Built with MongoDB/Mongoose database and Express routing.
 ## Table of Contents
 * [Installation](#installation)
 * [Usage](#usage)
