@@ -12,15 +12,16 @@ module.exports = function (app) {
             })
     });
 
-    app.post("/api/workouts", function (req, res) {
-        Workout.create({})
-            .then(data => {
-                res.json(data);
-            })
-            .catch(err => {
-                res.json(err);
-            })
-    });
+    
+    app.post("/api/workouts", (req, res) => {
+        Workout.create(req.body)
+          .then(data => {
+            res.json(data);
+          })
+          .catch(err => {
+            res.status(400).json(err);
+          });
+      });
 
     app.put("/api/workouts/:id", (req, res) => {
         Workout.findByIdAndUpdate(
