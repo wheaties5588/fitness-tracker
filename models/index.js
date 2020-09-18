@@ -50,7 +50,7 @@ const workoutSchema = new Schema({
 });
 
 
-// adds a dynamic property to schema 
+// total duration virtual property calculation
 workoutSchema.virtual("totalDuration").get(function() {
   //console.log("#######################################");
   //console.log(this.exercises);
