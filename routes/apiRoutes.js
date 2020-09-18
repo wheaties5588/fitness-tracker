@@ -1,9 +1,9 @@
-const Workout = require("../models")
+const db = require("../models")
 
 module.exports = function (app) {
 
     app.get("/api/workouts", function (req, res) {
-        Workout.find()
+        db.Workout.find()
             .then(data => {
                 res.json(data);
             })
@@ -14,7 +14,7 @@ module.exports = function (app) {
 
     
     app.post("/api/workouts", (req, res) => {
-        Workout.create(req.body)
+        db.Workout.create(req.body)
           .then(data => {
             res.json(data);
           })
@@ -24,7 +24,7 @@ module.exports = function (app) {
       });
 
     app.put("/api/workouts/:id", (req, res) => {
-        Workout.findByIdAndUpdate(
+        db.Workout.findByIdAndUpdate(
             req.params.id,
             { $push: { exercises: req.body } },
             { new: true }
