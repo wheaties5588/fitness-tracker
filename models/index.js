@@ -49,6 +49,19 @@ const workoutSchema = new Schema({
   
 });
 
+
+// adds a dynamic property to schema 
+workoutSchema.virtual("totalDuration").get(function() {
+  //console.log("#######################################");
+  //console.log(this.exercises);
+  let arr = this.exercises;
+  var total = 0;
+  arr.forEach(el => {
+    total += el.duration;
+  });
+  return total;
+});
+
 const Workout = mongoose.model("Workout", workoutSchema);
 
 module.exports = { Workout };
